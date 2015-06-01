@@ -385,11 +385,16 @@ body, html {
   padding-bottom: 60px;
 
   &>form, &>h1, &>h2, &>h3, &>h4, &>p, &>table, &>ul, &>ol, &>aside, &>dl{
-    margin-right: $examples-width;
+    width: $examples-width;
+    clear: left;
     padding: 0 $main-padding;
     @include box-sizing(border-box);
     display: block;
     @include text-shadow($main-embossed-text-shadow);
+  }
+  
+  &>form, &>p, &>table, &>ul, &>ol, &>aside, &>dl {
+    float: left;
   }
 
   &>ul, &>ol {
@@ -588,10 +593,8 @@ body, html {
     background-color: $code-annotation-bg;
     color: #fff;
     padding: 0.5em $main-padding;
-    margin: 0;
+    margin: 0 0 0 50%;
     width: $examples-width;
-    float:right;
-    clear:right;
     @include box-sizing(border-box);
     @include text-shadow(none);
 

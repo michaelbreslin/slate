@@ -14,6 +14,8 @@ In addition to these two mandatory fields, documents can contain any other conte
 
 <h3 id="documentCreate">Create</h3>
 
+To create a document, make a POST request with the document's JSON content to `https://$USERNAME.cloudant.com/$DATABASE`.
+
 > Creating a document:
 
 ```http
@@ -52,9 +54,9 @@ db.insert($JSON, function (err, body, headers) {
 }
 ```
 
-To create a document, make a POST request with the document's JSON content to `https://$USERNAME.cloudant.com/$DATABASE`.
+The response is a JSON document containing the ID of the created document, the revision string, and `"ok": true`. If you did not provide an `_id` field, Cloudant generates one automatically as a [UUID](http://en.wikipedia.org/wiki/Universally_unique_identifier). If creation of the document failed, the response contains a description of the error.
 
-<div></div>
+<aside>If the write quorum cannot be met, a [`202` response](http.html#http-status-codes) is returned.</aside>
 
 > Example response:
 
@@ -65,10 +67,6 @@ To create a document, make a POST request with the document's JSON content to `h
   "rev":"1-2902191555"
 }
 ```
-
-The response is a JSON document containing the ID of the created document, the revision string, and `"ok": true`. If you did not provide an `_id` field, Cloudant generates one automatically as a [UUID](http://en.wikipedia.org/wiki/Universally_unique_identifier). If creation of the document failed, the response contains a description of the error.
-
-<aside>If the write quorum cannot be met, a [`202` response](http.html#http-status-codes) is returned.</aside>
 
 ### Read
 
