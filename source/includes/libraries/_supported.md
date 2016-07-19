@@ -115,7 +115,7 @@ See [API Reference](api.html) for more information about meteor-couchdb APIs.
 
 A supported library for working with Cloudant using Python is available [here](https://github.com/cloudant/python-cloudant).
 
-The current Python release, version 2.0.3, is stable. You can find more information [here](https://www.python.org/about/). 
+The current Python release, version 2.0.3, is stable. You can find more information about the Python language [here](https://www.python.org/about/). 
 
 
 ### Objective C and Swift
