@@ -169,7 +169,7 @@ The following examples show the GET and PUT security options.
 }
 ```
 
-Where `auth.json` contains user roles and permissions as described in [Modifying Permissions](#modifying_permissions).
+Where `auth.json` contains user roles and permissions as described in [Modifying Permissions](#modifyingpermissions).
 
 <div></div>
 
