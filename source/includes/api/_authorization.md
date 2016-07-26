@@ -144,6 +144,47 @@ The request object's `cloudant` field contains an object whose keys are username
 
 The response tells you whether the update has been successful.
 
+### Setting Shared Database Permissions
+
+To set shared database permissions, you can use these two forms: `dbname/_security` and `_api/v2`. While both forms are described here, the `_api/v2` form is used in the remainder of the Authorization section. To set permissions between databases, you must create two accounts, replicate database1 and share it with database2 using either the dbname/_security or _api/v2 form.
+
+The `dbname/_security` form supports changes if you are using API keys with administrator credentials. This method does not work with the `_api/v2` form because it throws a 500 error.
+
+The following examples show the GET and PUT security options.
+
+> PUT example
+
+```curl 
+-H "Content-Type: application/json" --data @auth.json -X PUT -u <username>:<password> 'https://<username>.cloudant.com/_api/v2/db/animaldb/_security'
+```
+
+```curl -H "Content-Type: application/json" --data @auth.json -X PUT -u <username>:<password> 'https://<username>.cloudant.com/animaldb/_security'
+```
+
+> Example response:
+
+```json
+{
+  "ok": true
+}
+```
+
+Where `auth.json` contains user roles and permissions as described in the [Modifying Permissions](#modifying).
+
+<div></div>
+
+> GET example
+
+```curl 
+-X GET -u <username>:<password> 'https://<username>.cloudant.com/_api/v2/db/animaldb/_security'
+```
+
+```curl 
+-X GET -u <username>:<password> 'https://<username>.cloudant.com/animaldb/_security'
+```
+
+<div></div>
+
 ### Creating API Keys
 
 <aside class="warning" role="complementary" aria-label="apibypostdeprecated">The earlier method of generating API keys by `POST`ing to `https://cloudant.com/api/generate_api_key` is now deprecated.</aside>
