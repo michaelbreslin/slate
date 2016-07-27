@@ -146,19 +146,21 @@ The response tells you whether the update has been successful.
 
 ### Setting Shared Database Permissions
 
-To set shared database permissions, you can use these two forms: `dbname/_security` and `_api/v2`. While both forms are described here, the `_api/v2` form is used in the remainder of the Authorization section. To set permissions between databases, you must create two accounts, replicate database1 and share it with database2 using either the `dbname/_security` or `_api/v2 form`.
+To set shared database permissions, you can use the `dbname/_security` or the `_api/v2` form. While both forms are described in this section, the remainder of the Authorization section only uses the `_api/v2` form.
 
-The following examples show the GET and PUT security options.
+To set shared database permissions, create two accounts, replicate a database and share it with the second database by using either the `dbname/_security` or `_api/v2` form. You can change the `dbname/_security` form if you use API keys with administrator credentials. However, if you use this method with the `_api/v2` form, an 500 error occurs. The `auth.json` document contains user roles and permissions as described in [Modifying Permissions](authorization.html#modifying-permissions).
 
-> PUT example with both forms
+> PUT example with `_api/v2` form
 
-```curl
--H "Content-Type: application/json" --data @auth.json -X PUT -u <username>:<password> 'https://<username>.cloudant.com/_api/v2/db/animaldb/_security'
+```shell
+curl -H "Content-Type: application/json" --data @auth.json -X PUT -u <username>:<password> 'https://<username>.cloudant.com/_api/v2/db/animaldb/_security'
 ```
+<div></div>
 
-`dbname/_security` form
-```curl 
--H "Content-Type: application/json" --data @auth.json -X PUT -u <username>:<password> 'https://<username>.cloudant.com/animaldb/_security'
+> PUT example with `dbname/_security` form
+
+```shell
+curl -H "Content-Type: application/json" --data @auth.json -X PUT -u <username>:<password> 'https://<username>.cloudant.com/animaldb/_security'
 ```
 
 > Example response:
@@ -168,22 +170,19 @@ The following examples show the GET and PUT security options.
   "ok": true
 }
 ```
-
-Where `auth.json` contains user roles and permissions as described in [Modifying Permissions](authorization.html#modifying-permissions).
-
 <div></div>
 
-> GET example with both forms
+> GET example with `_api/v2` form
 
-```curl
--X GET -u <username>:<password> 'https://<username>.cloudant.com/_api/v2/db/animaldb/_security'
+```shell
+curl -X GET -u <username>:<password> 'https://<username>.cloudant.com/_api/v2/db/animaldb/_security'
 ```
 
-```curl
--X GET -u <username>:<password> 'https://<username>.cloudant.com/animaldb/_security'
-```
+> GET example with `dbname/_security` form
 
-**Note**: The `dbname/_security` form supports changes if you are using API keys with administrator credentials. This method does not work with the `_api/v2` form because it throws a 500 error.
+```shell 
+curl -X GET -u <username>:<password> 'https://<username>.cloudant.com/animaldb/_security'
+```
 <div></div>
 
 ### Creating API Keys
