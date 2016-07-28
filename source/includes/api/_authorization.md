@@ -146,9 +146,9 @@ The response tells you whether the update has been successful.
 
 ### Setting Shared Database Permissions
 
-You can either use the `dbname/_security` or `_api/v2` form to set shared database permissions. While both forms are described in this section, the remainder of the Authorization section only discusses the `_api/v2` form.
+You can set shared database permissions with either the `dbname/_security` or `_api/v2` form. While both types are described in this section, the remainder of the Authorization section only discusses the `_api/v2` form.
 
-After you create two accounts and replicate your database, share the database with the second database by using the security form that works best. 
+To set shared database permissions, you must create two accounts,  replicate a database, and share the database with the second database by using the security form that works best for your environment. 
 
 **Note:** You can change the `dbname/_security` form if you use API keys with administrator credentials. However, if you use this method with the `_api/v2` form, a 500 error occurs. 
 
