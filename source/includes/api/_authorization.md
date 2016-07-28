@@ -146,9 +146,11 @@ The response tells you whether the update has been successful.
 
 ### Setting Shared Database Permissions
 
-To set shared database permissions, you can use the `dbname/_security` or the `_api/v2` form. While both forms are described in this section, the remainder of the Authorization section only uses the `_api/v2` form.
+You can either use the `dbname/_security` or `_api/v2` form to set shared database permissions. While both forms are described in this section, the remainder of the Authorization section only discusses the `_api/v2` form.
 
-To set shared database permissions, create two accounts, replicate a database and share it with the second database by using either the `dbname/_security` or `_api/v2` form. You can change the `dbname/_security` form if you use API keys with administrator credentials. However, if you use this method with the `_api/v2` form, an 500 error occurs. The `auth.json` document contains user roles and permissions as described in [Modifying Permissions](authorization.html#modifying-permissions).
+After you create two accounts and replicate your database, share the database with the second database by using the security form that works best. 
+
+**Note:** You can change the `dbname/_security` form if you use API keys with administrator credentials. However, if you use this method with the `_api/v2` form, a 500 error occurs. 
 
 > PUT example with `_api/v2` form
 
@@ -162,6 +164,7 @@ curl -H "Content-Type: application/json" --data @auth.json -X PUT -u <username>:
 ```shell
 curl -H "Content-Type: application/json" --data @auth.json -X PUT -u <username>:<password> 'https://<username>.cloudant.com/animaldb/_security'
 ```
+Where `auth.json` contains user roles and permissions as described in [Modifying Permissions](authorization.html#modifying-permissions).
 
 > Example response:
 
