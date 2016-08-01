@@ -98,6 +98,19 @@ You can read more information in the following sections.
 ### Cloudant Local
 <a href="https://www.ibm.com/support/knowledgecenter/SSTPQH_1.0.0/com.ibm.cloudant.local.doc/SSTPQH_1.0.0_welcome.html" target="_blank">IBM Cloudant Data Layer Local Edition (Cloudant Local)</a> is a locally installed version of the Cloudant Database-as-a-Service (DBaaS) offering.
 
+
+## Versions of Cloudant
+
+IBM offers additional versions of Cloudant.
+
+*	Cloudant Data Layer Local Edition is a locally installed version of the Cloudant Database-as-a-Service (DBaaS) offering. 
+*	Cloudant on Bluemix Local is delivered as-a-service and in constant collaboration with your IT team.  
+
+You can read more information in the following sections. 
+
+### Cloudant Local
+<a href="https://www.ibm.com/support/knowledgecenter/SSTPQH_1.0.0/com.ibm.cloudant.local.doc/SSTPQH_1.0.0_welcome.html" target="_blank">IBM Cloudant Data Layer Local Edition (Cloudant Local)</a> is a locally installed version of the Cloudant Database-as-a-Service (DBaaS) offering.
+
 Cloudant Local provides you with the same basic capabilities as the full Cloudant single-tenant offering,
 but hosted within your own data center installation.
 
@@ -109,7 +122,6 @@ including:
 - <a href="http://www.ibm.com/support/knowledgecenter/SSTPQH_1.0.0/com.ibm.cloudant.local.install.doc/topics/clinstall_extract_install_cloudant_local.html?lang=en" target="_blank">Installation and Configuration</a>
 - <a href="http://www-01.ibm.com/support/knowledgecenter/SSTPQH_1.0.0/com.ibm.cloudant.local.install.doc/topics/clinstall_maintenance_tasks_overview.html?lang=en" target="_blank">Maintenance Tasks</a>
 - <a href="http://www-01.ibm.com/support/knowledgecenter/SSTPQH_1.0.0/com.ibm.cloudant.local.install.doc/topics/clinstall_tuning_parameters_replication_cases.html?lang=en" target="_blank">Tuning replication parameters</a>
-
 
 ### Cloudant on Bluemix Local
 Cloudant on Bluemix Local is a NoSQL database-as-a-service (DBaaS) built from the ground up to scale globally, run non-stop, and handle a wide variety of data types like JSON, full-text, and geospatial. Cloudant is an operational data store optimized to handle concurrent reads & writes, and provide high availability and data durability. 
@@ -142,7 +154,7 @@ To ensure that Cloudant on Bluemix Local installs correctly, you must meet the f
 <th>Disk-OS (GB)</th>
 <th>Disk Config-OS</th>
 <th>min Disk-Data (GB)</th>
-<th>recommended min Disk-Data (GB)</th>
+<th>recommended Disk-Data (GB)</th>
 <th>Disk Config-Data</th>
 <th>Network (Gbps)</th>
 </tr>
@@ -244,7 +256,7 @@ To ensure that Cloudant on Bluemix Local installs correctly, you must meet the f
 <td>10</td>
 <td>VMDK-thick eager zeroed</td>
 <td>800</td>
-<td>1000</td>
+<td>1600</td>
 <td>VMDK-thick eager zeroed/independent persistent</td>
 <td>1</td>
 </tr>
@@ -367,46 +379,46 @@ These recommendations assume that you are using the required hardware for Clouda
 <tr><td>1</td>
 <td>48</td>
 <td>64</td>
-<td>db1.bml-<customer>001</td>
+<td>db1.bml-&lt;customer&gt;001</td>
 </tr>
 <tr><td>2</td>
 <td>48</td>
 <td>64</td>
-<td>db2.bml-<customer>001</td>
+<td>db2.bml-&lt;customer&gt;001</td>
 </tr>
 <tr><td>3</td>
 <td>48</td>
 <td>64</td>
-<td>db3.bml-<customer>001</td>
+<td>db3.bml-&lt;customer&gt;001</td>
 </tr>
 <tr><td>4</td>
 <td>48</td>
 <td>96</td>
-<td>lb1.bml-<customer>001
-lb1.bml-ops-<customer>001
-db1.bml-ops-<customer>001
-db1.bml-<customer>-bk0011</td>
+<td>lb1.bml-&lt;customer&gt;001
+lb1.bml-ops-&lt;customer&gt;001
+db1.bml-ops-&lt;customer&gt;001
+db1.bml-&lt;customer&gt;-bk0011</td>
 </tr>
 <tr><td>5</td>
 <td>48</td>
 <td>96</td>
-<td>lb2.bml-<customer>001
-lb2.bml-ops-<customer>001
-db2.bml-ops-<customer>001
-db2.bml-<customer>-bk0011</td>
+<td>lb2.bml-&lt;customer&gt;001
+lb2.bml-ops-&lt;customer&gt;001
+db2.bml-ops-&lt;customer&gt;001
+db2.bml-&lt;customer&gt;-bk0011</td>
 </tr>
 <tr><td>6</td>
 <td>44</td>
 <td>92</td>
-<td>lb1.bml-<customer>-bk001
-db3.bml-ops-<customer>001
-db3.bml-<customer>-bk001
-sapi1.bml-<customer></td>
+<td>lb1.bml-&lt;customer&gt;-bk001
+db3.bml-ops-&lt;customer&gt;001
+db3.bml-&lt;customer&gt;-bk001
+sapi1.bml-&lt;customer&gt;</td>
 </tr>
 <tr><td>7</td>
 <td>20</td>
 <td>38</td>
-<td>lb2.bml-<customer>-bk001
+<td>lb2.bml-&lt;customer&gt;-bk001
 sapi2.bml-customer
 infra1.bml-customer</td>
 </tr>
