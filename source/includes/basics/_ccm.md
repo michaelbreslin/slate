@@ -16,7 +16,7 @@ Writes,
 and Queries.
 Each tier has a base 20GB storage allocation,
 with additional storage available
-at $1 per GB per month (indicative pricing as at August 2016) .
+at $1 per GB per month.
 The tier prices range from free,
 through to several thousand dollars per month,
 depending on the configuration you choose.
@@ -42,10 +42,7 @@ please contact [Cloudant Support](mailto:support@cloudant.com).</aside>
 <tr>
 <th colspan="2">Plans</th>
 <th>Lite</th>
-<th>Starter</th>
-<th>Personal</th>
-<th>Professional</th>
-<th>Enterprise</th>
+<th colspan="4">Standard</th>
 </tr>
 <tr>
 <td colspan="2">Base Price (monthly)</td>
