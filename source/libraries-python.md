@@ -1,9 +1,11 @@
 ---
 title: Cloudant Documentation - Python
-jupyter_kernel: python2
+thebe:
+  kernel_name: python2
+  codemirror_mode_name: python
 
 language_tabs:
-#  - http 
+#  - http
 #  - shell: curl
 #  - javascript: node.js
 #  - python
@@ -19,4 +21,3 @@ includes:
   - libraries/python
 
 ---
-
